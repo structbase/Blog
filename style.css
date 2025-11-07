@@ -1,6 +1,12 @@
-.title-holder {
-    width: 84%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: gainsboro;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 15px 15px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
