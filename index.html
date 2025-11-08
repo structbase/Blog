@@ -33,8 +33,64 @@
                 </div>
             </nav>
         </header>
+        <main class="main mt-4">
+            <form action="/create-post" method="POST">
+                <div class="container w-50" id="blog-input-field">
+                    <div class="mb-3">
+                        <label for="titleInput" class="form-label">Title</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="titleInput"
+                            name="title"
+                            placeholder="Enter title here"
+                        />
+                        <span class="title-error" id="titleError"></span>
+                    </div>
 
-        <main class="main"></main>
+                    <div class="mb-3">
+                        <label for="contentInput" class="form-label"
+                            >Content</label
+                        >
+                        <textarea
+                            class="form-control"
+                            id="contentInput"
+                            name="content"
+                            rows="5"
+                            placeholder="Enter content here"
+                        ></textarea>
+                        <span class="content-error" id="contentError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Create Post
+                    </button>
+                </div>
+            </form>
+
+            <div class="container mt-4" id="blog-post">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="small text-muted">January 1, 2023</div>
+                        <h2 class="card-title">Featured Post Title</h2>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Reiciendis aliquid atque, nulla? Quos cum ex
+                            quis soluta, a laboriosam.
+                        </p>
+                        <button class="btn btn-outline-primary" id="btn-read-more">Read more </button>
+                        <button class="btn btn-outline-secondary" id="btn-edit">Edit</button>
+                        <button class="btn btn-outline-danger" id="btn-delete">Delete</button>
+                    </div>
+                </div>
+
+                <span class="text-center text-muted">
+                    There are no posts yet — please create one by pressing
+                    <strong>Create Post</strong>.
+                </span>
+            </div>
+        </main>
+
         <footer class="">
             <button id="theme-toggle" class="btn">
                 <i id="theme-icon" class="bi bi-sun-fill"></i>
