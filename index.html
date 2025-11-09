@@ -27,6 +27,8 @@
                     <button
                         class="btn btn-light position-absolute end-0 me-3"
                         id="create-post"
+                        data-bs-toggle="model"
+                        data-bs-target="#createPostModal"
                     >
                         Create Post
                     </button>
@@ -34,15 +36,13 @@
             </nav>
         </header>
         <main class="main mt-4">
-            <main class="main mt-4">
-                <!-- Blog Posts Display Area -->
-                <div class="container mt-4" id="blog-post">
-                    <span class="text-center text-muted d-block">
-                        There are no posts yet — please create one by pressing
-                        <strong>Create Post</strong>.
-                    </span>
-                </div>
-            </main>
+            <!-- Blog Posts Display Area -->
+            <div class="container mt-4" id="blog-post">
+                <span class="text-center text-muted d-block">
+                    There are no posts yet — please create one by pressing
+                    <strong>Create Post</strong>.
+                </span>
+            </div>
         </main>
 
         <footer class="">
