@@ -28,14 +28,14 @@
                         class="btn btn-light position-absolute end-0 me-3"
                         id="create-post"
                         data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
+                        data-bs-target="#createPostModal"
                     >
                         Create Post
                     </button>
                 </div>
             </nav>
         </header>
-        <main class="main mt-4">
+        <main class="main mt-4 w-100 h-100 bg-primarhy">
             <!-- Blog Posts Display Area -->
             <div class="container mt-4" id="blog-post">
                 <span class="text-center text-muted d-block">
@@ -45,21 +45,19 @@
             </div>
         </main>
 
-        <!-- Create Post Modal -->
         <!-- Modal -->
         <div
             class="modal fade"
-            id="exampleModal"
+            id="createPostModal"
             tabindex="-1"
-            aria-labelledby="exampleModalLabel"
             aria-hidden="true"
         >
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
-                            Modal title
-                        </h1>
+                        <h5 class="modal-title w-100 text-center">
+                            Create New Post
+                        </h5>
                         <button
                             type="button"
                             class="btn-close"
@@ -67,17 +65,60 @@
                             aria-label="Close"
                         ></button>
                     </div>
-                    <div class="modal-body">...</div>
-                    <div class="modal-footer">
+                    <div class="modal-body">
+                        <!-- actual blog post -->
+                        <form id="postForm">
+                            <div class="mb-3">
+                                <label for="titleInput" class="form-label"
+                                    >Title</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="titleInput"
+                                    name="title"
+                                    placeholder="Enter title here"
+                                />
+                                <span
+                                    class="title-error text-danger"
+                                    id="titleError"
+                                ></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contentInput" class="form-label"
+                                    >Content</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="contentInput"
+                                    name="content"
+                                    rows="5"
+                                    placeholder="Enter content here"
+                                ></textarea>
+                                <span
+                                    class="content-error text-danger"
+                                    id="contentError"
+                                ></span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- saving and closing buttons for the modal -->
+                    <div class="modal-footer justify-content-around">
                         <button
                             type="button"
                             class="btn btn-secondary"
                             data-bs-dismiss="modal"
                         >
-                            Close
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary">
-                            Save changes
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="savePostBtn"
+                        >
+                            Save Post
                         </button>
                     </div>
                 </div>
