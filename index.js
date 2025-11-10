@@ -49,7 +49,7 @@ function renderPosts() {
     });
 }
 
-// saves posts  to local storage 
+// saves posts  to local storage
 function handleSavePost() {
     const title = titleInput.value.trim();
     const content = contentInput.value.trim();
@@ -59,7 +59,6 @@ function handleSavePost() {
 
     const date = new Date().toLocaleDateString();
 
-    
     if (editIndex !== null) {
         posts[editIndex] = { title, content, date };
         editIndex = null; // Reset edit mode
@@ -75,7 +74,6 @@ function handleSavePost() {
 
     postModal.hide();
 }
-
 
 document.addEventListener("DOMContentLoaded", renderPosts);
 savePostBtn.addEventListener("click", handleSavePost);
