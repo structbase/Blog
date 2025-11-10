@@ -48,3 +48,36 @@ function renderPosts() {
         blogPostContainer.appendChild(card);
     });
 }
+
+// saves posts  to local storage 
+function handleSavePost() {
+    const title = titleInput.value.trim();
+    const content = contentInput.value.trim();
+
+    if (!title) return alert("Title can't be empty");
+    if (!content) return alert("Content can't be empty");
+
+    const date = new Date().toLocaleDateString();
+
+    
+    if (editIndex !== null) {
+        posts[editIndex] = { title, content, date };
+        editIndex = null; // Reset edit mode
+    } else {
+        posts.push({ title, content, date });
+    }
+
+    savePosts(posts); // sync to localStorage
+    renderPosts(); // refresh display
+
+    titleInput.value = "";
+    contentInput.value = "";
+
+    postModal.hide();
+}
+
+
+document.addEventListener("DOMContentLoaded", renderPosts);
+savePostBtn.addEventListener("click", handleSavePost);
+
+renderPosts();
