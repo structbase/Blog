@@ -43,7 +43,7 @@ function renderPosts() {
     posts.forEach((post, index) => {
         // Loop through each post to create a card
         const card = document.createElement("div");
-        card.className = "card mb-4 w-50 mx-auto";
+        card.className = "card mb-4 col-md-8 col-sm-10 mx-auto";
         card.innerHTML = `
             <div class="card-body">
                 <div class="small text-muted">${post.date}</div>

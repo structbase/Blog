@@ -11,6 +11,31 @@ footer {
     z-index: 1000;
 }
 
-.bi-moon-stars-fill{
+.bi-moon-stars-fill {
     color: black;
+}
+
+body > header > nav > div > h1 {
+    font-family: "Raleway", sans-serif;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#blog-post > div > div > div {
+    font-family: "Pompiere", sans-serif;
+    font-weight: 800;
+    color: red;
+}
+#blog-post > div > div > h2 {
+    font-family: "Rubik 80s Fade", system-ui;
+    font-size: 1.5rem;
+}
+
+#blog-post > div > div > p {
+    font-family: "Raleway", sans-serif;
+    font-size: large;
+}
+#create-post {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: bold;
 }
