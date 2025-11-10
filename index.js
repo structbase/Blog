@@ -8,7 +8,7 @@ function getPosts() {
     return JSON.parse(localStorage.getItem("posts")) || [];
 }
 
-const posts = [];
+let posts = getPosts();
 let editIndex = null;
 
 function savePosts(posts) {
@@ -74,6 +74,26 @@ function handleSavePost() {
 
     postModal.hide();
 }
+
+// event delegation for delete/edit 
+blogPostContainer.addEventListener("click", (event) => {
+    const target = event.target;
+    const index = parseInt(target.dataset.index);
+
+    if (!target.dataset.action) return;
+
+    if (target.dataset.action === "delete") {
+        posts.splice(index, 1); // remove the post from array
+        savePosts(posts);
+        renderPosts();
+    } else if (target.dataset.action === "edit") {
+        const post = posts[index];
+        titleInput.value = post.title;
+        contentInput.value = post.content;
+        editIndex = index;
+        postModal.show();
+    }
+});
 
 document.addEventListener("DOMContentLoaded", renderPosts);
 savePostBtn.addEventListener("click", handleSavePost);
