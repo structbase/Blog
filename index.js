@@ -46,4 +46,12 @@ function renderPosts() {
         `;
         blogPostContainer.appendChild(card);
     });
+    // listener on delete
+    document.querySelectorAll("#btn-delete").forEach((btn) => {
+        btn.addEventListener("click", deletePost);
+    });
+    // listener on edit post
+    document.querySelectorAll("#btn-edit").forEach((btn) => {
+        btn.addEventListener("click", editPost);
+    });
 }
